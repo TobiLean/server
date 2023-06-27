@@ -33,3 +33,9 @@ http.createServer((request, response) => {
 }).listen(port);
 
 console.log(`Server is running at http://localhost:${ port }/`);
+
+const DEVMODE = (process.env.NODE_ENV !== 'production');
+
+if (DEVMODE) {
+    console.log('application started in development mode');
+}
